@@ -5,7 +5,7 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      pizza: null,
+      pizza: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Menu extends Component {
       "https://gerappa-test01-api.azurewebsites.net/api/pizza/a9a462bb-8b18-46f6-bce9-43b082cef3d1"
     )
       .then((response) => response.json())
-      .then((pizza) => console.log(pizza))
+      .then((pizza) => this.setState({ pizza }))
       .catch((error) => console.error("Menu problem:", error));
   }
 
@@ -26,7 +26,7 @@ class Menu extends Component {
         </div>
         <div>
           <h3>Here will be a list of pizza</h3>
-          <p>{this.state.pizza}</p>
+          <p>{this.state.pizza.name}</p>
         </div>
         <div>
           <h3>Here you will be able to create your own pizza</h3>
