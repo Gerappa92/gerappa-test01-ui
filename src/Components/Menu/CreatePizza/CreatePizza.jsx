@@ -18,12 +18,6 @@ class CreatePizza extends Component {
       target.name === "isVegetarian" ? target.checked : target.value;
     const name = target.name;
 
-    if (name === "description") {
-      const vector = String(value).split(",").length;
-
-      this.setState;
-    }
-
     this.setState({
       [name]: value,
     });
