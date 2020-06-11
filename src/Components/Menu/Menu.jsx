@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Pizza from "./Pizza/Pizza";
+import CreatePizza from "./CreatePizza/CreatePizza";
 
 class Menu extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Menu extends Component {
         </div>
         <div>
           <h3>Here you will be able to create your own pizza</h3>
+          <CreatePizza />
         </div>
       </>
     );
