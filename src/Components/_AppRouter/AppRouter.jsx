@@ -5,6 +5,20 @@ import Menu from "../Menu/Menu";
 import Order from "../Order/Order";
 
 class AppRouter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pizza: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://localhost:44301/api/pizza/all")
+      .then((response) => response.json())
+      .then((pizza) => this.setState({ pizza }))
+      .catch((error) => console.error("Menu problem:", error));
+  }
+
   render() {
     return (
       <Router>
@@ -13,7 +27,7 @@ class AppRouter extends Component {
         <Link to='/Order'>Order</Link>
         <Switch>
           <Route exact path='/Menu'>
-            <Menu />
+            <Menu pizza={this.state.pizza} />
           </Route>
           <Route exact path='/Order'>
             <Order />
