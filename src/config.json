@@ -1,0 +1,4 @@
+{
+  "apiUrl": "https://gerappa-test01-api.azurewebsites.net/api/",
+  "local": "https://localhost:44301/api/"
+}
